@@ -6,31 +6,28 @@ import numpy as np
 import pandas as pd
 
 
+# Converte colunas específicas para o tipo string
 def convert_to_string(df, columns):
     for col in columns:
-        df[col] = df[col].astype("string")
+        df[col] = df[col].astype("string")  # Altera o tipo dos dados da coluna para string
 
-
+# Converte colunas específicas para o tipo inteiro (int64)
 def convert_to_int(df, columns):
     for col in columns:
-        df[col] = df[col].astype("int64")
+        df[col] = df[col].astype("int64")  # Altera o tipo dos dados da coluna para inteiro
 
-
+# Converte colunas específicas para o tipo datetime (datas)
 def convert_to_datetime(df, columns):
     for col in columns:
-        df[col] = pd.to_datetime(df[col])
+        df[col] = pd.to_datetime(df[col])  # Converte os valores da coluna para formato de data
 
-
+# Multiplica valores de colunas numéricas por um fator específico
 def multiply_by_factor(df, columns, factor):
     for col in columns:
-        df[col] = df[col] * factor
+        df[col] = df[col] * factor  # Multiplica os valores da coluna pelo fator fornecido
 
 
-
-
-
-
-
+___________________________________________________________________________________________________
 
 def fill_missing_values(df, columns, strategy="mean", fill_value=None):
     """Preenche valores nulos com média, mediana, moda ou um valor específico."""
